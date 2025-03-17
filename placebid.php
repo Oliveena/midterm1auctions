@@ -4,7 +4,6 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-//var_dump($_SESSION['email']);
 
 if (!isset($_GET['id'])) {
     echo "Error: Couldn't find item.";
@@ -30,8 +29,6 @@ $is_logged_in = isset($_SESSION['username']);
 // auto fill bidder information
 $bidderName = isset($_SESSION['username']) ? $_SESSION['username'] : '';
 $bidderEmail = isset($_SESSION['email']) ? $_SESSION['email'] : '';
-
-var_dump($_SESSION['email']);
 
 // set empty error list
 $errorList = [];

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2025 at 06:19 PM
+-- Generation Time: Mar 17, 2025 at 06:52 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,10 +43,11 @@ CREATE TABLE `auctions` (
 --
 
 INSERT INTO `auctions` (`id`, `itemDescription`, `itemImagePath`, `sellerName`, `sellerEmail`, `lastBidPrice`, `lastBidderName`, `lastBidderEmail`) VALUES
-(1, '<p>A pretty blue vase.</p>', 'uploads/pexels-photo-220987_67d8365e7e825.jpeg', 'Bob', 'bob@bobby.ca', 10.00, NULL, NULL),
+(1, '<p>A pretty blue vase.</p>', 'uploads/pexels-photo-220987_67d8365e7e825.jpeg', 'Bob', 'bob@bobby.ca', 50.00, 'Poetry', 'nine@ten.com'),
 (2, '<p>Vinfast VF6, 2025, good condition.&nbsp;</p>', 'uploads/1-2025-VinFast-VF6-front-view_67d836c6582cb.jpeg', 'Zlata', 'zlata@hotmail.com', 65000.00, NULL, NULL),
 (3, '<p>A Mahindra tractor.&nbsp;</p>', 'uploads/2655HST_CLEAN_LIFESTYLEF_LOADER_12_14_17_667_67d837014cbfe.jpg', 'Agatha', 'agatha@gmail.com', 50000.00, NULL, NULL),
-(4, '<p>Vintage grandfather clock, late XIX century.&nbsp;</p>', 'uploads/grandfatherclock_67d83738c036d.jpeg', 'Valeriu', 'val@valval.ca', 7777.01, 'Roger', 'roger@rabbit.re');
+(4, '<p>Vintage grandfather clock, late XIX century.&nbsp;</p>', 'uploads/grandfatherclock_67d83738c036d.jpeg', 'Valeriu', 'val@valval.ca', 7777.01, 'Roger', 'roger@rabbit.re'),
+(5, 'Object for sale&nbsp;\r\n<p>whatever</p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size: 36pt;\">12</span></p>', 'uploads/startrekcollectible_67d85db786675.jpg', 'Poetry', 'nine@ten.com', 90.00, 'Poetry', 'nine@ten.com');
 
 -- --------------------------------------------------------
 
@@ -68,7 +69,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 (2, 'Victor Hugo', 'victor@hugo.com', '$2y$10$IOvNtbqcIDx2AYvpxv5SoeEKOZhvd6ECxTICyvC4o0HHDd5BGQRw6'),
 (3, 'Bob Bobby', 'bob@bobby.ca', '$2y$10$RxutBwoqq4zm.0tUU37skOskyy3tvZPQGjMUW1iTxvwOPHQlMl4Za'),
-(4, 'Discovery', 'ten@eleven.com', '$2y$10$sUhIeFCTW/gtY38HzhdB/OEFbN1Gn6Ll01ibWZhvrbrqqr8B2QhJG');
+(4, 'Discovery', 'ten@eleven.com', '$2y$10$sUhIeFCTW/gtY38HzhdB/OEFbN1Gn6Ll01ibWZhvrbrqqr8B2QhJG'),
+(5, 'Poetry', 'nine@ten.com', '$2y$10$.MgXIcnxBiebeeaog4FiOuhTPOnD0L/ZMUnR2J8gYhfCmnJ5t2Cmq');
 
 --
 -- Indexes for dumped tables
@@ -97,13 +99,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `auctions`
 --
 ALTER TABLE `auctions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

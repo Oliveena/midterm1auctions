@@ -4,11 +4,6 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// Debugging session data (remove this in production)
-echo '<pre>';
-var_dump($_SESSION);
-echo '</pre>';
-
 if ($_SERVER['QUERY_STRING'] == 'noname') {
     unset($_SESSION['username']);
 }
