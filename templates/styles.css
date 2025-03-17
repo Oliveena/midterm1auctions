@@ -1,0 +1,208 @@
+/* General body and font styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container to center content */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+/* Heading Style */
+h1 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Header Styling */
+.header {
+    background-color: #333;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure text is visible on dark background (like in header) */
+.brand-logo {
+    font-size: 2rem;
+    font-family: 'Georgia', serif;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Navigation Styles */
+.navbar {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-item {
+    margin: 0 15px;
+    font-size: 1rem;
+}
+
+.nav-item a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-item a:hover {
+    text-decoration: underline;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+td {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Hover effect for table rows */
+tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+/* Make a Bid Link Styling */
+a {
+    color: #84A4FC;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Form Styling */
+form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+form label {
+    font-size: 1rem;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form input[type="file"] {
+    padding: 5px;
+}
+
+form button {
+    background-color: #84A4FC;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #FDE2E4;
+    color: #F8A9C6;
+    border: 1px solid #F8A9C6;
+}
+
+form button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(132, 164, 252, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px 0;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .large-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    /* Make table more responsive */
+    table {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    table th,
+    table td {
+        padding: 8px;
+    }
+}
