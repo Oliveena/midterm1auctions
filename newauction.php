@@ -1,11 +1,21 @@
 <?php 
 include('db.php');
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+// session is active?
+if (!isset($_SESSION['username'])) {
+    // if not active, redirecting user to log in
+    header("Location: login.php");
+    exit(); // do not ececute the rest of the script
+}
 
 $itemDescription = isset($_POST['itemDescription']) ? $_POST['itemDescription'] : '';
 $itemImagePath = isset($_FILES['itemImagePath']) ? $_FILES['itemImagePath'] : '';
-$sellerName = $_POST['sellerName'] ?? '';
-$sellerEmail = $_POST['sellerEmail'] ?? '';
+// poplate from session instead of POST
+$sellerName = $_SESSION['username'] ?? '';  
+$sellerEmail = $_SESSION['email'] ?? ''; 
 $initialBidPrice = $_POST['initialBidPrice'] ?? 0;
 $errorList = [];
 
@@ -133,12 +143,12 @@ if (!empty($errorList)) {
 
     <div>
         <label for="sellerName">Seller's Name (2-100 characters):</label><br>
-        <input type="text" name="sellerName" id="sellerName" required>
+        <input type="text" name="sellerName" id="sellerName" value="<?php echo htmlspecialchars($sellerName); ?>" required>
     </div>
 
     <div>
         <label for="sellerEmail">Seller's Email:</label><br>
-        <input type="email" name="sellerEmail" id="sellerEmail" required>
+        <input type="email" name="sellerEmail" id="sellerEmail" value="<?php echo htmlspecialchars($sellerEmail); ?>" required>
     </div>
 
     <div>

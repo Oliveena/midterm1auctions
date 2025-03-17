@@ -1,17 +1,21 @@
 <?php 
 include('db.php');
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
-// Query to get the last 5 auctions
-$sql = 'SELECT id, itemDescription, itemImagePath, sellerName, lastBidPrice FROM auctions ORDER BY id DESC LIMIT 5';
+// no limit on items displayed
+// TODO: add pagination to results
+// TODO: add 'sort by' option to results
+$sql = 'SELECT id, itemDescription, itemImagePath, sellerName, lastBidPrice FROM auctions ORDER BY id DESC';
 $result = mysqli_query($conn, $sql);
 $auctions = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-// Free result and close connection
+// free result and close connection
 mysqli_free_result($result);
 mysqli_close($conn);
 
-// Check if user is logged in
+// check if user is logged in
 $is_logged_in = isset($_SESSION['name']);
 ?>
 

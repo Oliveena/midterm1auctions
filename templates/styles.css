@@ -24,10 +24,13 @@ h1 {
 
 /* Header Styling */
 .header {
-    background-color: #333;
-    padding: 20px 0;
+    background-color: #84A4FC;
+    padding: 10px 0; /* Adjusted padding */
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: auto; /* Make sure it grows only to the required height */
+    max-height: 10vw; /* Optional: Set a max-height for better control */
+    box-sizing: border-box; /* Ensure padding is part of the height */
 }
 
 /* Ensure text is visible on dark background (like in header) */
@@ -154,10 +157,11 @@ form input[type="file"] {
     padding: 5px;
 }
 
-form button {
+form button, .large-button {
     background-color: #84A4FC;
-    color: white;
+    color: black;
     padding: 15px 30px;
+    margin: 2vw;
     text-decoration: none;
     border-radius: 5px;
     font-size: 1.2rem;
